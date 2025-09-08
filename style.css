@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fffaf4;
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #266b3d;
+}
+
+header .logo span {
+  color: #59c16a;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #59c188;
+}
+
+.btn {
+  background: #59c17c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #266b3d;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 10%;
+  background: url("img/background-farinha.jpg") no-repeat center/cover;
+  color: #141414;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 30px;
+}
+
+/* Diferenciais */
+.why {
+  text-align: center;
+  padding: 60px 5%;
+}
+
+.grid-why {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.why-item {
+  background: rgba(255,255,255,0); /* transparente */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+}
+
+.why-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.why-item h3 {
+  margin: 10px 0;
+  color: #266b3d;
+}
+
+.why-item p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Carrossel de Produtos */
+.produtos {
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.produto {
+  min-width: 100%;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.8);
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 20px;
+}
+
+.produto img {
+  width: 80%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.produto h3 {
+  margin: 10px 0;
+}
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.carousel-dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  display: inline-block;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dots .dot.active {
+  background-color: #266b3d;
+}
+
+/* História */
+.historia {
+  padding: 60px 15%;
+  background: #fffaf4;
+  text-align: center;
+}
+
+.historia h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #266b3d;
+}
+
+.historia p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #444;
+}
+
+/* Contato */
+.contato {
+  text-align: center;
+  padding: 60px 10%;
+  background: #f6ede7;
+}
+
+.contato p {
+  margin: 10px 0;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #266b35;
+  color: #fff;
+}
