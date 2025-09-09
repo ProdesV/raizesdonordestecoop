@@ -297,3 +297,28 @@ footer {
     padding: 10px 0;
   }
 }
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .produto {
+    min-width: 85%;
+    margin-right: 10px;
+  }
+
+  .carousel-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .produto {
+    scroll-snap-align: start;
+  }
+
+  .produto img {
+    height: 120px; /* reduz um pouco a altura da imagem */
+  }
+}
