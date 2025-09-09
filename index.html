@@ -11,16 +11,19 @@
 <body>
 
   <!-- Cabeçalho -->
-  <header>
-    <div class="logo">Raízes do Nordeste<span> Cooperativa</span></div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+<header>
+  <div class="logo">Raízes do Nordeste<span>Cooperativa</span></div>
+  <button class="menu-toggle">☰</button>
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Produtos</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+      
+    </ul>
+  </nav>
+
    <a href="https://wa.me/+557799874570?text=Olá,+gostaria+de+fazer+um+pedido." target="_blank" class="btn">
   Peça Agora
 </a>
@@ -177,6 +180,14 @@
     // iniciar
     updateCarousel(currentIndex);
   </script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 
 </body>
 

@@ -265,3 +265,35 @@ footer {
     height: auto;
   }
 }
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #266b3d;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+  }
+
+  .menu.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
