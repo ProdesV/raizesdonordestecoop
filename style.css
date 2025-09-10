@@ -308,11 +308,6 @@ footer {
     margin-right: 10px;
   }
 
-  .carousel-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
 
   .produto {
     scroll-snap-align: start;
