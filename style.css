@@ -1,136 +1,262 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* style.css - completo e integrado
+   - Cabeçalho responsivo (menu hambúrguer)
+   - Carrossel com setas + bolinhas (compatível iOS/Android)
+   - Mantém esquema de cores original (verde)
+*/
+
+/* ===== Variáveis de tema ===== */
+:root{
+  --green: #266b3d;
+  --green-light: #59c17c;
+  --bg: #fffaf4;
+  --card-bg: rgba(255,255,255,0.95);
+  --text: #333;
+  --shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+/* ===== Reset / Base ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Cabeçalho */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: #2c3e50;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* ===== Cabeçalho ===== */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:20px 6%;
+  background: #fff; /* mantido branco */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  position:relative;
+  z-index:1000;
 }
 
-header .logo {
-  font-size: 1.3rem;
-  font-weight: bold;
+.logo{
+  font-size:1.25rem;
+  font-weight:700;
+  color:var(--green);
+}
+.logo span{ color: var(--green-light); font-weight:600; margin-left:6px; }
+
+/* Nav padrão (desktop) */
+nav#nav, nav.menu{ display:flex; align-items:center; }
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:18px;
+  align-items:center;
+  margin:0;
+  padding:0;
+}
+nav ul li a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:700;
+  padding:6px 4px;
+}
+nav ul li a:hover{ color: var(--green-light); }
+
+/* Botão principal */
+.btn{
+  background: var(--green-light);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  display:inline-block;
+  transition: background .22s ease, transform .12s ease;
+}
+.btn:hover{ background: var(--green); transform: translateY(-1px); }
+
+/* Botão menu (hamburguer) */
+.menu-toggle{
+  display:none;              /* aparece apenas em mobile */
+  background:none;
+  border:none;
+  font-size:26px;
+  color:var(--green);
+  cursor:pointer;
 }
 
-header nav ul {
-  display: flex;
-  list-style: none;
+/* ===== Hero ===== */
+.hero{
+  text-align:center;
+  padding:70px 6%;
+  /* se você quiser background via css, adicione aqui:
+     background:url("image/hero.jpg") center/cover no-repeat;
+  */
+  color: #141414;
+}
+.hero h1{ font-size:2rem; margin-bottom:10px; }
+.hero p{ margin-bottom:16px; }
+
+/* ===== Diferenciais (why) ===== */
+.why{ text-align:center; padding:48px 6%; }
+.grid-why{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+  margin-top:18px;
+}
+.why-item{
+  background: rgba(255,255,255,0); /* transparente conforme solicitado */
+  padding:16px;
+  border-radius:12px;
+  box-shadow: var(--shadow);
+  transition: transform .22s ease;
+}
+.why-item:hover{ transform: translateY(-6px); }
+.why-item img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+.why-item h3{ color:var(--green); margin-bottom:6px; }
+.why-item p{ color:var(--text); line-height:1.5; }
+
+/* ===== Seção Produtos / Carrossel ===== */
+/* Suporta tanto .carousel como .carousel-container (você usou ambos em versões) */
+.carousel, .carousel-container {
+  position:relative;
+  max-width:480px;     /* largura máxima no desktop */
+  width:100%;
+  margin: 18px auto 0;
+  overflow:hidden;
+  padding: 0 6px;      /* um pequeno padding lateral para mobile */
 }
 
-header nav ul li {
-  margin: 0 10px;
+/* Track / slides */
+.carousel-track, .carousel-track {
+  display:flex;
+  transition: transform .45s ease-in-out;
+  will-change: transform;
 }
 
-header nav ul li a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
+/* Cada produto (um por vez) */
+.produto{
+  min-width:100%;
+  flex:0 0 100%;
+  padding:18px;
+  background: var(--card-bg);
+  border-radius:12px;
+  box-shadow: var(--shadow);
+  text-align:center;
+}
+.produto img{
+  width:100%;
+  height:auto;
+  max-height:260px;       /* limite desktop */
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  margin: 0 auto 12px;
+}
+.produto h3{ margin:8px 0 10px; font-size:1.05rem; color:var(--green); }
+
+/* Setas (prev/next) */
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  border:none;
+  background: rgba(38,107,61,0.9);
+  color:#fff;
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index:20;
+}
+.carousel-btn.prev{ left:8px; }
+.carousel-btn.next{ right:8px; }
+
+/* Bolinhas de paginação */
+.carousel-dots, .carousel-dots {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px;
+  padding-bottom:8px;
+}
+.carousel-dots .dot, .carousel-dots .dot{
+  width:12px; height:12px; border-radius:50%;
+  background:#cfcfcf; display:inline-block; cursor:pointer;
+  transition: background .2s ease, transform .12s ease;
+}
+.carousel-dots .dot.active, .carousel-dots .dot.active{ background:var(--green); transform: scale(1.02); }
+
+/* ===== História, Contato, Rodapé ===== */
+.historia{ padding:48px 10%; background: var(--bg); text-align:center; }
+.historia h2{ color:var(--green); margin-bottom:14px; }
+.historia p{ color:#444; line-height:1.6; text-align:justify; margin-bottom:10px; }
+
+.contato{ text-align:center; padding:48px 8%; background:#f6ede7; }
+.contato p{ margin:8px 0; }
+
+footer{
+  text-align:center;
+  padding:18px;
+  background: var(--green);
+  color:#fff;
+  margin-top:18px;
 }
 
-header nav ul li a:hover {
-  color: #f1c40f;
+/* ===== Acessibilidade / Pequenos ajustes ===== */
+button{ font: inherit }
+a.btn, button{ outline-offset:3px; }
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px){
+  .carousel, .carousel-container { max-width:420px; }
+  .produtos { padding: 36px 4%; }
 }
 
-.btn {
-  background: #27ae60;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s;
+@media (max-width: 768px){
+  /* Header mobile */
+  header{
+    padding:14px 5%;
+    align-items:center;
+  }
+
+  /* Mostra o botão hamburguer e esconde nav até ativar */
+  .menu-toggle{ display:block; }
+  nav#nav, nav.menu{ display:none; width:100%; }
+  nav#nav.active, nav.menu.active{ display:block; }
+
+  nav ul{ flex-direction:column; gap:10px; padding:10px 0; background:#fff; width:100%; }
+
+  /* Ajusta hero e seções */
+  .hero{ padding:40px 5%; }
+  .why{ padding:28px 5%; }
+  .historia{ padding:28px 6%; }
+
+  /* Carrossel mobile: ocupa 100% e imagens menores */
+  .carousel, .carousel-container{ max-width:100%; padding:0 10px; }
+  .produto img{ max-height:150px; }
+
+  /* Setas menores e mais próximas */
+  .carousel-btn{ width:34px; height:34px; }
+  .carousel-btn.prev{ left:6px; }
+  .carousel-btn.next{ right:6px; }
 }
 
-.btn:hover {
-  background: #219150;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: url("image/hero.jpg") center/cover no-repeat;
-  color: white;
-}
-
-/* Seção produtos com carrossel */
-.produtos {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.carousel {
-  position: relative;
-  max-width: 400px;
-  margin: 20px auto;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.produto {
-  min-width: 100%;
-  padding: 20px;
-}
-
-.produto img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.carousel-btn.prev {
-  left: 10px;
-}
-
-.carousel-btn.next {
-  right: 10px;
-}
-
-.carousel-dots {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.carousel-dots .dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.carousel-dots .dot.active {
-  background: #333;
+/* Small screens tiny tweak */
+@media (max-width:420px){
+  .logo{ font-size:1.05rem; }
+  .btn{ padding:8px 12px; font-size:0.95rem; }
+  .carousel-dots{ gap:8px; }
+  .carousel-dots .dot{ width:11px; height:11px; }
 }
