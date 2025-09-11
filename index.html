@@ -14,18 +14,19 @@
   <!-- Cabeçalho -->
   <header>
     <div class="logo">Raízes do Nordeste<span> Cooperativa</span></div>
-    <button class="menu-toggle">☰</button>
-    <nav class="menu">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <button id="menu-toggle">☰</button>
+   
     <a href="https://wa.me/+557799874570?text=Olá,+gostaria+de+fazer+um+pedido." target="_blank" class="btn">
       Peça Agora
     </a>
+    <nav id="menu" style="display: none;">
+  <ul>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
   </header>
 
   <!-- Hero -->
@@ -129,5 +130,14 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  const menuBtn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
+  });
+</script>
+
 </body>
 </html>
