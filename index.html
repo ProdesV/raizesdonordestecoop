@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raízes do Nordeste</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,21 +13,19 @@
 
   <!-- Cabeçalho -->
   <header>
-    <div class="logo">Raízes do Nordeste<span>Cooperativa</span></div>
-    <button class="menu-toggle">☰</button>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Produtos</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
-
-      </ul>
-    </nav>
+    <div class="logo">Raízes do Nordeste<span> Cooperativa</span></div>
+    <button id="menu-toggle">☰</button>
 
     <a href="https://wa.me/+557799874570?text=Olá,+gostaria+de+fazer+um+pedido." target="_blank" class="btn">
       Peça Agora
     </a>
+    <nav id="menu" style="display: none;">
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
 
   </header>
 
@@ -39,33 +38,28 @@
 
   <!-- Diferenciais -->
   <section class="why">
-    <h2>Por que escolher nossa farinha?</h2>
+    <h2>Por que escolher nossos produtos?</h2>
     <div class="grid-why">
-
       <div class="why-item">
         <img src="image/IMG-20250905-WA0012.jpg" alt="Qualidade">
-        <h3>Qualidade Garantida</h3>
+        <h3>Qualidade Garantida ✅</h3>
         <p>Selecionamos os melhores grãos para uma farinha pura e saudável.</p>
       </div>
-
       <div class="why-item">
         <img src="image/IMG-20250905-WA0026.jpg" alt="Tradição">
-        <h3>Tradição</h3>
-        <p>Desde 2019 levando sabor e tradição para sua mesa.</p>
+        <h3>Tradição 🌾</h3>
+        <p> Levando sabor e tradição para sua mesa .</p>
       </div>
-
       <div class="why-item">
         <img src="image/IMG-20250905-WA0031.jpg" alt="Preço Justo">
-        <h3>Preço Justo</h3>
+        <h3>Preço Justo 💰</h3>
         <p>Produtos acessíveis sem abrir mão da qualidade.</p>
       </div>
-
       <div class="why-item">
         <img src="image/IMG-20250905-WA0022.jpg" alt="Sustentável">
-        <h3>Produção Sustentável</h3>
+        <h3>Produção Sustentável 🌱</h3>
         <p>Processos que respeitam o meio ambiente e a comunidade local.</p>
       </div>
-
     </div>
   </section>
 
@@ -74,14 +68,14 @@
     <h2>Nossos Produtos</h2>
     <div class="carousel-container">
       <div class="carousel-track">
-        <div class="produto active">
+        <div class="produto">
           <img src="image/farinha branca.jpg" alt="Farinha de Mandioca">
           <h3>Farinha de Mandioca</h3>
           <a href="https://wa.me/+557799874570?text=Olá,+gostaria+de+comprar+Farinha+de+Mandioca." target="_blank"
             class="btn">Comprar</a>
         </div>
         <div class="produto">
-          <img src="image/farinha amarela.jpg" alt="Farinha de Mandioca Amarela">
+          <img src="image/farinha amarela.jpg" alt="Farinha Amarela">
           <h3>Farinha de Mandioca Amarela</h3>
           <a href="https://wa.me/+557799874570?text=Olá,+gostaria+de+comprar+Farinha+de+Mandioca+amarela."
             target="_blank" class="btn">Comprar</a>
@@ -93,7 +87,7 @@
             class="btn">Comprar</a>
         </div>
         <div class="produto">
-          <img src="image/Comprido.jpg" alt="Biscoito Avoador (Comprido)">
+          <img src="image/Comprido.jpg" alt="Biscoito Comprido">
           <h3>Biscoito Avoador (Comprido)</h3>
           <a href="https://wa.me/+557799874570?text=Olá,+gostaria+de+comprar+o+biscoito+avoador." target="_blank"
             class="btn">Comprar</a>
@@ -105,91 +99,72 @@
             class="btn">Comprar</a>
         </div>
       </div>
-
-      <div class="carousel-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
     </div>
   </section>
 
   <!-- Nossa História -->
   <section class="historia" id="sobre">
     <h2>Nossa História</h2>
-    <section class="historia" id="sobre">
-  <h2>Nossa História</h2>
-  <ul>
-    <li><strong>1960:</strong> Início da produção de farinha em Tamanduá com quatro fábricas manuais.</li>
-    <li><strong>1980:</strong> Produção mecanizada começa, impulsionando a expansão.</li>
-    <li><strong>1990:</strong> Chegada da energia elétrica fortalece a agricultura familiar.</li>
-    <li><strong>2005:</strong> Primeiro contato com o cooperativismo, ainda com dificuldades na comercialização.</li>
-    <li><strong>2017:</strong> Criação da Associação de Moradores e parcerias com o CESOL.</li>
-    <li><strong>2019:</strong> Nasce o grupo Raízes com empacotadora e vendas diretas.</li>
-    <li><strong>2020:</strong> Criação oficial da marca Raízes do Nordeste e primeiro financiamento.</li>
-    <li><strong>2021:</strong> Construção do galpão, participação em eventos e novas parcerias.</li>
-    <li><strong>2022:</strong> Aquisição do caminhão e contrato com o PENAE.</li>
-    <li><strong>2023:</strong> Fundação oficial da Cooperativa Raízes do Nordeste.</li>
-    <li><strong>2024:</strong> Ampliação do galpão e participação na Exposição de Vitória da Conquista.</li>
-  </ul>
-</section>
+    HEAD <section class="historia" id="sobre">
+      <h2>Nossa História</h2>
+      <ul>
+        <li><strong>1960:</strong> Início da produção de farinha em Tamanduá com quatro fábricas manuais.</li>
+        <li><strong>1980:</strong> Produção mecanizada começa, impulsionando a expansão.</li>
+        <li><strong>1990:</strong> Chegada da energia elétrica fortalece a agricultura familiar.</li>
+        <li><strong>2005:</strong> Primeiro contato com o cooperativismo, ainda com dificuldades na comercialização.
+        </li>
+        <li><strong>2017:</strong> Criação da Associação de Moradores e parcerias com o CESOL.</li>
+        <li><strong>2019:</strong> Nasce o grupo Raízes com empacotadora e vendas diretas.</li>
+        <li><strong>2020:</strong> Criação oficial da marca Raízes do Nordeste e primeiro financiamento.</li>
+        <li><strong>2021:</strong> Construção do galpão, participação em eventos e novas parcerias.</li>
+        <li><strong>2022:</strong> Aquisição do caminhão e contrato com o PENAE.</li>
+        <li><strong>2023:</strong> Fundação oficial da Cooperativa Raízes do Nordeste.</li>
+        <li><strong>2024:</strong> Ampliação do galpão e participação na Exposição de Vitória da Conquista.</li>
+      </ul>
 
-  </section>
+      =======
+      <p>A produção de farinha em Tamanduá começou em 1960, quando existiam apenas quatro fábricas, com processos
+        totalmente manuais. Em 1980, iniciou-se a produção mecanizada impulsionando a expansão das fábricas. Dez anos
+        depois, em 1990, a chegada da energia elétrica permitiu a mecanização na roça, fortalecendo a agricultura
+        familiar na região.</p>
+      <p>Em 2005, nossa comunidade teve o primeiro contato com o cooperativismo, embora a experiência inicial não tenha
+        sido satisfatória na comercialização dos produtos.Em 2017, foi criada a Associação de Moradores de Tamanduá,
+        abrindo caminho para parcerias importantes com o CESOL.</p>
+      <p>O grupo Raízes nasceu em 2019, com o arrendamento de uma empacotadora e a comercialização direta no mercado,sem
+        intermediários. A marca Raízes do Nordeste foi oficialmente criada em 2020, ano em que realizamos nosso primeiro
+        financiamento para aquisição da empacotadora.</p>
+      <p>Em 2021, iniciamos a construção do galpão, participamos da Exposição Belo Campo e firmamos parcerias com o
+        Sebrae e com o contador Marcelo.</p>
+      <p>No ano seguinte, adquirimos nosso caminhão, estruturamos equipes de fardamento e entrega, e firmamos contrato
+        com o PENAE.</p>
+      <p>Em 21 de setembro de 2023, fundamos oficialmente a Cooperativa Raízes do Nordeste. Em 2024 ampliamos nosso
+        galpão, fortalecemos parcerias com a Ascob e o Sescoop, e participamos da Exposição em Vitória da Conquista,
+        consolidando nossa presença no mercado e o compromisso com a qualidade e tradição da produção local.</p>
+      >>>>>>> 95cd9ddbcf61e967ea4f53f83a691abc925f96a4
+    </section>
 
-  <!-- Contato -->
-  <section class="contato" id="contato">
-    <h2>Entre em Contato</h2>
-    <p>📍 Tamanduá - Belo Campo-Ba</p>
-    <p>📞 (+55)7799874570</p>
-    <p>💬 WhatsApp disponível!</p>
-  </section>
+    <!-- Contato -->
+    <section class="contato" id="contato">
+      <h2>Entre em Contato</h2>
+      <p>📍 Tamanduá, Belo Campo-BA</p>
+      <p>📞 (+55) 77 99874-570</p>
+      <p>💬 WhatsApp disponível!</p>
+    </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2025 Farinha Raízes - Todos os direitos reservados</p>
-  </footer>
+    <!-- Rodapé -->
+    <footer>
+      <p>© 2025 Farinha Raízes - Todos os direitos reservados</p>
+    </footer>
 
-  <!-- JS do Carrossel -->
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const produtos = Array.from(track.children);
-    const dots = Array.from(document.querySelectorAll('.dot'));
+    <script src="script.js"></script>
+    <script>
+      const menuBtn = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
 
-    let currentIndex = 0;
-
-    function updateCarousel(index) {
-      track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[index].classList.add('active');
-    }
-
-    // adicionar clique nas bolinhas
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        currentIndex = i;
-        updateCarousel(currentIndex);
+      menuBtn.addEventListener('click', () => {
+        menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
       });
-    });
-
-    // auto slide opcional
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % produtos.length;
-      updateCarousel(currentIndex);
-    }, 4000);
-
-    // iniciar
-    updateCarousel(currentIndex);
-  </script>
-  <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-    });
-  </script>
+    </script>
 
 </body>
 

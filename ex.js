@@ -1,28 +1,27 @@
-const track = document.querySelector('.carousel-track');
-const produtos = Array.from(track.children);
-const dots = Array.from(document.querySelectorAll('.dot'));
+// Menu hamburguer
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
 
-let currentIndex = 0;
-
-function updateCarousel(index) {
-  track.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
-
-// adicionar clique nas bolinhas
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    currentIndex = i;
-    updateCarousel(currentIndex);
-  });
+toggle.addEventListener('click', () => {
+  console.log('Botão clicado!');
+  menu.classList.toggle('active');
 });
 
-// auto slide opcional
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % produtos.length;
-  updateCarousel(currentIndex);
-}, 4000);
 
-// iniciar
-updateCarousel(currentIndex);
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+// Carrossel com scroll automático opcional
+const carousel = document.querySelector('.carousel-container');
+
+let scrollAmount = 0;
+setInterval(() => {
+  if (carousel) {
+    carousel.scrollBy({ left: 350, behavior: 'smooth' });
+    // reset no final
+    if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }
+}, 4000);
