@@ -133,7 +133,7 @@ nav ul li a:hover {
 }
 
 .carrossel::-webkit-scrollbar-thumb {
-  background: #59c17c;
+  background: #6cc2895b;
   border-radius: 4px;
 }
 
@@ -141,7 +141,7 @@ nav ul li a:hover {
   flex: 0 0 auto;
   scroll-snap-align: start;
   background: #fff;
-  border: 1px solid #59c17c;
+  border: 1px solid #5aa37288;
   padding: 20px;
   width: 250px;
   border-radius: 15px;
